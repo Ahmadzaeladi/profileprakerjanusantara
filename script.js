@@ -54,3 +54,15 @@ window.addEventListener('scroll', function () {
         heroImg.style.transform = `translateY(${scrolled * 0.1}px)`;
     }
 });
+
+// Modern Gallery Interaction
+document.querySelectorAll('.mg-item').forEach(item => {
+    item.addEventListener('click', () => {
+        // Remove active class from all items
+        document.querySelectorAll('.mg-item').forEach(innerItem => {
+            innerItem.classList.remove('active');
+        });
+        // Add active class to clicked item
+        item.classList.add('active');
+    });
+});
